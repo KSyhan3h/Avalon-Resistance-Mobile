@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdd977c31ef7f04ab940b820bbfbcac, type: 3}
+  m_Name: Good
+  m_EditorClassIdentifier: 
+  name: Good
+  description: These are the good guys
+  sprite: {fileID: 0}
+  characters:
+  - {fileID: 11400000, guid: 40c598dd9b28ea74793a954db1938927, type: 2}
+  - {fileID: 11400000, guid: 07831287a9b1be1438e35bef01c80d7e, type: 2}
+  - {fileID: 11400000, guid: 1a7a79beb1d46494f934fc7fc0a18bba, type: 2}
