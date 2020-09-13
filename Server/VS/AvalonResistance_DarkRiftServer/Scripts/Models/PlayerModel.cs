@@ -9,9 +9,9 @@ namespace AvalonServerPlugin.Scripts.Models
 
 		public readonly IClient client;
 		public int roomID;
-		public PlayerInfo info;
+		public ClientInfo info;
 
-		public PlayerModel (IClient client, int roomID = NO_ROOM, PlayerInfo info = null) 
+		public PlayerModel (IClient client, int roomID = NO_ROOM, ClientInfo info = null) 
 		{
 			this.client = client;
 			this.roomID = roomID;

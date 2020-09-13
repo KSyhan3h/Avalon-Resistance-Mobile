@@ -98,7 +98,8 @@ namespace AvalonServerPlugin.Scripts.System
 
 			_logger.Info (string.Format ("Client {0} is now part of room #{1}", client.ID, roomID));
 
-			// TODO : Send message to the client to enter the room
+			// TODO : Send message to the client to enter the room OR to display the room UI 
+			// provide the room information that the player needs to enter
 		}
 
 		public void RemovePlayerFromRoom (IClient client, ushort roomID)
@@ -126,7 +127,9 @@ namespace AvalonServerPlugin.Scripts.System
 
 			_logger.Info (string.Format ("Client {0} is no longer part of room #{1}", client.ID, roomID));
 
-			// Send message to everyone that needs this information
+			// Send message to everyone in the room that the player has been removed/left the room; 
+			// If Lobby needs the information that the a player has been added to the idle players in the lobby,
+			// that is if the player is still connected to the server, provide the information as well 
 		}
 
 		public void UpdateRoomInfo ()

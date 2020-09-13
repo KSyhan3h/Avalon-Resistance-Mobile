@@ -27,7 +27,7 @@ namespace AvalonServerPlugin.Scripts.System
 		}
 
 		#region Private Methods
-		private void UpdatePlayerInfo (IClient client, PlayerInfo playerInfo)
+		private void UpdatePlayerInfo (IClient client, ClientInfo playerInfo)
 		{
 			// Fetch PlayerModel from LobbySystem
 			LobbySystem.instance.FetchPlayer (client).info = playerInfo;

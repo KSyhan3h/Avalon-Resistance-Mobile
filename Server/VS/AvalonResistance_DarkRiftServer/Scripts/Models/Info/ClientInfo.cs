@@ -4,9 +4,10 @@ using System.Text;
 
 namespace AvalonServerPlugin.Scripts.Models.Info
 {
-	public class GamseSettingsInfo
+	public class ClientInfo
 	{
-		public int minPlayers;
-		public int maxPlayers;
+		public string name;
+		// Sprite Image
+		// Record
 	}
 }

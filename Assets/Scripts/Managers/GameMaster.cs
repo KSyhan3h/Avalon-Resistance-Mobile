@@ -34,7 +34,7 @@ namespace AvalonResistance
         public void Reset () 
         {
             // Clear Previous State and Remove any unneeded items on the scene
-            currentPhase = StateTag.RoleAssignment;
+            currentPhase = StateTag.StartGame;
             factions = null;
             characters = null;
             disbandPartyCount = 0;

@@ -10,6 +10,6 @@ namespace AvalonServerPlugin.Scripts.Models.Info
 		public string description;
 		public RoomAvailability availability;
 		// Game settings
-		public GamseSettingsInfo gameSettings;
+		public GameSettingsInfo gameSettings;
 	}
 }
