@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2+QwaRQjTAth6ZiPf+tQz3dsCjWc1nAOA4vkzEnGOlLKBhvkJm7viHVEl12SDSn7zM8JWK6GoBm1sdS06w/2ww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\frnac\\Documents\\Unity\\3D Games\\Avalon Resistance Mobile\\Server\\VS\\AvalonResistance_DarkRiftServer\\AvalonServerPlugin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\frnac\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\frnac\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

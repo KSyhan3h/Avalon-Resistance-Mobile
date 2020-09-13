@@ -1,0 +1,27 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 6.2.9200.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.7.0.0 - Free
+[Trace]   pluginFactory         Created plugin 'BichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DefaultNetworkListener Starting bichannel listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61701.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:54905.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:61701|127.0.0.1:54905].
+[Info]    ClientManager         Client [0] disconnected: ConnectionAborted.
+                                 System.Net.Sockets.SocketException (0x80004005): An established connection was aborted by the software in your host machine
+[Trace]   CommandEngine         Command entered: 'demo'
+[Info]    DemoCommand           Enabled demonstration mode.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61714.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57482.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:61714|127.0.0.1:57482].
+[Info]    ClientManager         Client [1] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61732.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:65037.
+[Info]    ClientManager         New client [2] connected [127.0.0.1:61732|127.0.0.1:65037].
+[Info]    ClientManager         Client [2] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61849.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:62150.
+[Info]    ClientManager         New client [3] connected [127.0.0.1:61849|127.0.0.1:62150].
+[Info]    ClientManager         Client [3] disconnected.
