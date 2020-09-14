@@ -32,6 +32,19 @@ namespace AvalonResistance
 			GameManager.instance.OnQuitGame += DisconnectFromServer;
 		}
 
+		public void TestSendMessage ()
+		{
+			StateTag test = StateTag.Game | StateTag.StartGame;
+			ushort roomID = 0;
+			using (DarkRiftWriter writer = DarkRiftWriter.Create ())
+			{
+				writer.Write (roomID);
+				using (Message message = Message.Create ((ushort) test, writer))
+					_client.SendMessage (message, SendMode.Reliable);
+			}
+		}
+
+
 		public void ConnectToServer ()
 		{
 			if (IsClientConnectedToServer)

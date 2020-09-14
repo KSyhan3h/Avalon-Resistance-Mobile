@@ -41,7 +41,6 @@ namespace AvalonResistance
 
         private void Start ()
         {
-            Test ();
 
             // Throw exceptions if manager is not initialized
             #region Managers
@@ -52,14 +51,6 @@ namespace AvalonResistance
             //     ThrowExceptionIfNull (_lobbyManager);
             #endregion
         }
-
-        private void Test ()
-        {
-            //StateTag testTag = StateTag.StartGame;
-            //Debug.Log (testTag.HasFlag (StateTag.Room) + " " + testTag.HasFlag (StateTag.AddPlayerToRoom));
-        }
-
-        
 
         private void ThrowExceptionIfNull<T> (T obj)
         {
