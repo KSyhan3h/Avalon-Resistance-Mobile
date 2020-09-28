@@ -18,11 +18,12 @@ namespace AvalonResistance
         [SerializeField] private NetworkManager _networkManager;
         [SerializeField] private LobbyManager _lobbyManager;
         [SerializeField] private RoomManager _roomManager;
+        [SerializeField] private GameMaster _gameMaster;
 
 
         [SerializeField] private Settings _defaultSettings;
         [SerializeField] private Settings _currentSettings;
-
+        private Settings _tempSettings;
 
         public Action OnQuitGame;
 
@@ -49,6 +50,13 @@ namespace AvalonResistance
 
             // if (!_lobbyManager)
             //     ThrowExceptionIfNull (_lobbyManager);
+
+            // Set values
+            //_tempSettings = 
+
+            // Set events
+            _networkManager.OnClientReceivedMessage += _lobbyManager.ReceiveMessage;
+            _networkManager.OnClientReceivedMessage += _gameMaster.ReceiveMessage;
             #endregion
         }
 
@@ -61,11 +69,6 @@ namespace AvalonResistance
         private void OnApplicationQuit ()
         {
             OnQuitGame?.Invoke ();
-        }
-
-        private void SendMessage ()
-        { 
-            
         }
 
         private void ReceivedMessage (StateTag stateTag, MessageReceivedEventArgs e)

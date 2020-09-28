@@ -4,7 +4,6 @@ using UnityEngine;
 using DarkRift;
 using DarkRift.Client;
 using AvalonResistance.States;
-using UnityEditor.U2D;
 
 namespace AvalonResistance
 {
@@ -15,7 +14,6 @@ namespace AvalonResistance
 
 		[SerializeField] private string _ipAddress;
 		[SerializeField] private int _port;
-		[SerializeField] private string testMessage;
 
 		public Action<StateTag, MessageReceivedEventArgs> OnClientReceivedMessage;
 		
@@ -31,19 +29,6 @@ namespace AvalonResistance
 			_client.MessageReceived += ClientReceivedMessage;
 			GameManager.instance.OnQuitGame += DisconnectFromServer;
 		}
-
-		public void TestSendMessage ()
-		{
-			StateTag test = StateTag.Game | StateTag.StartGame;
-			ushort roomID = 0;
-			using (DarkRiftWriter writer = DarkRiftWriter.Create ())
-			{
-				writer.Write (roomID);
-				using (Message message = Message.Create ((ushort) test, writer))
-					_client.SendMessage (message, SendMode.Reliable);
-			}
-		}
-
 
 		public void ConnectToServer ()
 		{

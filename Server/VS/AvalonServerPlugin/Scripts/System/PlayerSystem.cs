@@ -1,7 +1,6 @@
 ﻿using System;
 using DarkRift;
 using DarkRift.Server;
-using AvalonServerPlugin.Scripts.Models.Info;
 
 namespace AvalonServerPlugin.Scripts.System
 {
@@ -27,7 +26,7 @@ namespace AvalonServerPlugin.Scripts.System
 		}
 
 		#region Private Methods
-		private void UpdatePlayerInfo (IClient client, ClientInfo playerInfo)
+		private void UpdatePlayerInfo (IClient client, PlayerInfo playerInfo)
 		{
 			// Fetch PlayerModel from LobbySystem
 			LobbySystem.FetchPlayer (client).info = playerInfo;

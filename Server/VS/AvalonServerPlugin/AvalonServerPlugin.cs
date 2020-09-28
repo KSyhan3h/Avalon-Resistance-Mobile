@@ -1,6 +1,6 @@
 ﻿using System;
 using DarkRift.Server;
-using AvalonServerPlugin.Scripts.Networking;
+using AvalonServerPlugin.Scripts;
 using AvalonServerPlugin.Scripts.System;
 
 namespace AvalonServerPlugin

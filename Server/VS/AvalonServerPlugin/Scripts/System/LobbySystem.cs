@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AvalonServerPlugin.Scripts.Models;
-using AvalonServerPlugin.Scripts.Networking;
 using DarkRift;
 using DarkRift.Server;
 
@@ -17,7 +13,7 @@ namespace AvalonServerPlugin.Scripts.System
 		public static LobbySystem instance { get; private set; }
 
 		private Logger _logger;
-		private List<PlayerModel> _players;
+		private List<Player> _players;
 
 		// Constructor
 		public LobbySystem (Logger logger)
@@ -32,7 +28,7 @@ namespace AvalonServerPlugin.Scripts.System
 
 
 			_logger = logger;
-			_players = new List<PlayerModel> ();
+			_players = new List<Player> ();
 		}
 
 		public void UpdateLobbyInformation (IClient client)
@@ -51,7 +47,7 @@ namespace AvalonServerPlugin.Scripts.System
 			}
 			
 			// Player is not included in the pool so add the player
-			_players.Add (new PlayerModel (client));
+			_players.Add (new Player (client));
 			_logger.Info ("Client " + client.ID + " has been added to the player pool");
 			UpdateLobbyInformation (client);
 		}
@@ -72,7 +68,7 @@ namespace AvalonServerPlugin.Scripts.System
 			}
 		}
 
-		public static PlayerModel FetchPlayer (IClient client)
+		public static Player FetchPlayer (IClient client)
 		{
 			return instance._players.Find (x => x.client == client);
 		}

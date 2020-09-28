@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DarkRift.Server;
-using AvalonServerPlugin.Scripts.Models;
-using AvalonServerPlugin.Scripts.Models.Info;
 using DarkRift;
+using DarkRift.Server;
 
 namespace AvalonServerPlugin.Scripts.System
 {
@@ -18,7 +16,7 @@ namespace AvalonServerPlugin.Scripts.System
 
 		private Logger _logger;
 
-		private List<RoomModel> _rooms;
+		private List<Room> _rooms;
 
 
 		public RoomSystem (Logger logger)
@@ -31,7 +29,7 @@ namespace AvalonServerPlugin.Scripts.System
 			instance = this;
 
 			_logger = logger;
-			_rooms = new List<RoomModel> ();
+			_rooms = new List<Room> ();
 		}
 
 		public void CreateRoom (IClient client, RoomInfo roomInfo)
@@ -46,14 +44,14 @@ namespace AvalonServerPlugin.Scripts.System
 			{
 				// USE ROOM
 				// UPDATE ROOM STATE
-				room.state = RoomState.Open;
+				room.state = StateTag.Open;
 				// UPDATE THE ROOM MODEL INFO
 				room.info = roomInfo;
 			}
 			else
 			{
 				// Craete new room 
-				room = new RoomModel (roomInfo);
+				room = new Room (roomInfo);
 				// Add to list of rooms
 				_rooms.Add (room);
 			}
@@ -121,7 +119,7 @@ namespace AvalonServerPlugin.Scripts.System
 			}
 
 			var player = LobbySystem.FetchPlayer (client);
-			player.roomID = PlayerModel.NO_ROOM;
+			player.roomID = Player.NO_ROOM;
 
 			_logger.Info (string.Format ("Client {0} is no longer part of room #{1}", client.ID, roomID));
 
@@ -134,26 +132,19 @@ namespace AvalonServerPlugin.Scripts.System
 		{ 
 		}
 
-		public RoomModel FetchRoom (ushort roomID)
+		public Room FetchRoom (ushort roomID)
 		{
 			return _rooms.Find (x => x.ID == roomID);
 		}
 
-		public RoomModel FetchEmptyRoom ()
+		public Room FetchEmptyRoom ()
 		{
-			return _rooms.FirstOrDefault (x => x.state == RoomState.Open);
-		}
-
-		#region Network Communication
-		public void SendMessage ()
-		{
-		
+			return _rooms.FirstOrDefault (x => x.state == StateTag.Open);
 		}
 
 		public void ReceiveMessage (IClient client, Message message)
 		{
 			_logger.Info ("RoomSystem received the message: " + message.ToString ());
 		}
-		#endregion
 	}
 }

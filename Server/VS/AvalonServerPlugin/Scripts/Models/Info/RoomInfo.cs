@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AvalonServerPlugin.Scripts.Models.Info
+﻿namespace AvalonServerPlugin.Scripts
 {
 	public class RoomInfo
 	{
 		public string name;
 		public string description;
-		public RoomAvailability availability;
+		public StateTag availability;
 		// Game settings
 		public GameSettingsInfo gameSettings;
 	}

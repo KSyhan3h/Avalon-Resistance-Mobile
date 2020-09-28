@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace AvalonServerPlugin.Scripts.Models.Info
+namespace AvalonServerPlugin.Scripts
 {
 	public class GameSettingsInfo
 	{
-		public ushort minPlayers;
-		public ushort maxPlayers;
+		public ushort minPlayers;		// default min = 5		1 merlin ; 2 good ; 2 bad
+		public ushort maxPlayers;		// max players = 15
 		public ushort maxVotes;
-		public List<ushort> quests;
+		public List<ushort> quests;		// number of quests and their respective number of members per quest
 
 		// Timer Settings
 

@@ -3,8 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 using DarkRift;
 using DarkRift.Server;
-using AvalonServerPlugin.Scripts.Models.Info;
-using AvalonServerPlugin.Scripts.Networking;
 
 /// <summary>
 /// Server side will handle the shuffling and other non-client/player should do
@@ -118,7 +116,7 @@ namespace AvalonServerPlugin.Scripts.System
 		private void SetNewPartyLeader (ushort roomID, StateTag state)
 		{
 			// Fetch room gameinfo
-			StateTag newState = StateTag.Game;
+			StateTag newState = StateTag.Game | StateTag.SetLeader;
 			var info = gameInfoDictionary[roomID];
 			int currentLeaderID = -1;
 
